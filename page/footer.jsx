@@ -1,51 +1,78 @@
-export function Footer(){
-    return <div className="bg-[#1a1a1a] text-[#fffefd] ">
-        <div className="flex  ml-[300px] mr-[300px]">
-            <div className="">
-                <div className="text-2xl mt-[40px]">Press</div>
-                <div className="text-6xl mt-[30px]">Hinge in the headlines.</div>
-                <div className="text-xl mt-[30px]">See our press releases,media coverage,and press kits.</div>
-                <button className=" mt-[40px] rounded-2xl bg-white min-w-[250px] text-black text-2xl">
-                    Visit our newsroom
-                </button>
-        </div>
-        </div>
-        <div className="flex justify-around">
-            <div className="ml-[300px] mt-[200px] mr-[300px]">
-                <div className="mb-[20px]">
-                    <img src="https://hinge.co/_next/image?url=%2Flogos%2Fhinge.gif&w=96&q=75" alt="Hinge Logo" width={"100px"}/>
+import { Twitter, Instagram } from 'lucide-react';
+export const Footer = () => {
+    const currentYear = new Date().getFullYear();
+  
+    return (
+      <footer className="bg-[#1a1a1a] py-16">
+            <section className="py-24 px-4">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h1 className="text-5xl md:text-7xl font-serif text-white mb-8">
+                        Hinge in the headlines.
+                    </h1>
+                    <p className="text-xl text-gray-300 mb-12">
+                        See our press releases, media coverage, and press kits.
+                    </p>
+                    <button className="bg-white text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
+                        Visit our newsroom
+                    </button>
                 </div>
-            <div className="flex gap-[100px]">
-                <div className="">
-                    <h3 className="text-2xl bold">Index</h3>
-                    <li>Mission</li>
-                        <li>Careers</li>
-                        <li>Labs</li>
-                        <li>Press</li>
-                        <li>Success Stories</li>
-                        <li>Contact</li>
-                </div>
-                <div className="">
-                        <h3 className="text-2xl bold">Resources</h3>
-                        <li>Safe Dating Tips</li>
-                        <li>FAQ</li>
-                        <li>Trust & Safety</li>
-                </div>
-                <div className="">
-                        <h3 className="text-2xl bold">Legal</h3>
-                        <li>Security</li>
-                        <li>Terms</li>
-                        <li>Privacy</li>
-                        <li>Cookie Policy</li>
-                        <li>Consumer Health Data
-                            Privacy Policy
-                        </li>
-                        <li>Your Privacy Choices</li>
-                        <li>Colorado Safety Policy 
-                            Information</li>
-                </div>
-                </div>
+            </section>
+            <hr className='ml-[250px] mr-[250px] mb-[40px]'/>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-white text-lg font-semibold mb-4">Index</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white">Mission</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Careers</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Labs</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Press</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Success Stories</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
+              </ul>
             </div>
+            
+            <div>
+              <h3 className="text-white text-lg font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white">Safe Dating Tips</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Trust & Safety</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-white text-lg font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white">Security</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Terms</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Privacy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Your Privacy Choices</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Twitter className="h-6 w-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400">© {currentYear} Hinge Inc.</p>
+            <button className="mt-4 md:mt-0 text-gray-400 hover:text-white">
+              English (UK)
+            </button>
+          </div>
         </div>
-    </div>
-} 
+      </footer>
+    );
+  };
+  
+  export default Footer;

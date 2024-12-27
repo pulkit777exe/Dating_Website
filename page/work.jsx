@@ -1,5 +1,5 @@
 export function Work(){
-    return <div className="pt-[200px] flex justify-around ml-[150px]">
+    return <div className="pt-[200px] flex justify-around ml-[150px] pb-[200px] pt-[400px]">
         <div className="text-center">
             <div className="text-2xl mt-[100px]">Work at Hinge.</div>
             <div className="text-6xl mt-[40px] w-[300px]">Let's work together</div>
