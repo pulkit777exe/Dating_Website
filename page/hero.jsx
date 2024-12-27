@@ -11,7 +11,7 @@ export function Hero(){
         <div className="text-lg relative top-[55px]">
             TM
         </div>
-        <button className="absolute top-40 text-xl rounded-full bg-black text-white w-[100px] h-[40px] hover:bg-white hover:text-black duration-500">Sign In</button>
+        <button className="absolute top-40 text-xl rounded-full bg-black text-white w-[100px] h-[40px] hover:bg-white hover:text-black duration-500" >Sign In</button>
         </div>
     </div>
 </div>
