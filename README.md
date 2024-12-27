@@ -2,7 +2,7 @@
 
 - Developed By Pulkit Pareek
 - The Core algorithm is written by Priyanshu Prajapati
-- This Website is Designed by Yash Srivastava and Shobbit Awasthi
+- This Website is Designed by Yash Srivastava and Shobhit Awasthi
 
 ## Tech Stack Used
 - JS (React)
