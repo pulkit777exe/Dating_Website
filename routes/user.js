@@ -1,54 +1,52 @@
-import User from "../db/index"
+import userMiddleware from "../middleware/user"
+const express = require("express");
+const User = require("../db/index"); 
+const router = express.Router();
 
-const { Router } = require("express")
-const router = Router();
+router.post("/user/signup",userMiddleware, async (req, res) => {
+  const { username, password } = req.body; 
 
-router.post("/signup",function(req,res){
-    const username= req.headers.username;
-    const password = req.headers.password;
+  try {
+    const user = await User.create({
+      username: username,
+      password: password, 
+    });
+    res.json({
+      msg: "User was created successfully",
+    });
+    console.log("User created successfully");
+  } catch (e) {
+    console.error(e);
+    res.json({
+      msg: "Unable to create user",
+    });
+  }
+});
 
-    try{
-         const user = User.create({
-            username : username,
-            password : password
-        })
-    } catch(e){
-        console.error(e);
-    } finally {
-        console.log("Login Successful")
-    }
-     
-    if(user){
-        res.json({
-            msg : "User was created succesfully"
-        })
+router.post("/user/signin", userMiddleware ,async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const user = await User.findOne({
+      where: { username: username, password: password },
+    });
+
+    if (user) {
+      res.json({
+        msg: "User logged in successfully",
+      });
+      console.log("Login successful");
     } else {
-        res.json({
-            msg : "Unable to login"
-        })
+      res.json({
+        msg: "Invalid credentials",
+      });
     }
-})
-router.post("/signin",function(req,res){
-    const username= req.headers.username;
-    const password = req.headers.password;
+  } catch (e) {
+    console.error(e);
+    res.json({
+      msg: "Error logging in",
+    });
+  }
+});
 
-    try{
-         const user = User.findOne({
-            username : username,
-            password : password
-        })
-    } catch(e){
-        console.error(e);
-    } finally {
-        console.log("Login Successful")
-    }
-    if(user){
-        res.json({
-            msg : "User was logged in succesfully"
-        })
-    } else {
-        res.json({
-            msg : "Error logging in "
-        })
-    }
-})
+module.exports = router;

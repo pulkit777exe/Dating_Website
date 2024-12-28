@@ -1,9 +1,10 @@
 import Admin from "../db/index"
+import adminMiddleware from "../middleware/admin"
 
 const { Router } = require("express")
 const router = Router();
 
-router.post("/signup",function(req,res){
+router.post("/signup",adminMiddleware,function(req,res){
     const username= req.headers.username;
     const password = req.headers.password;
 
@@ -28,7 +29,7 @@ router.post("/signup",function(req,res){
         })
     }
 })
-router.post("/signin",function(req,res){
+router.post("/signin",adminMiddleware,function(req,res){
     const username= req.headers.username;
     const password = req.headers.password;
 
