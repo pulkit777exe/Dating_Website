@@ -9,7 +9,10 @@ export default {
     extend: {
       backgroundImage : {
         'hingeImage' : "/public/hinge-hero.svg"
-      }
+      },
+      fontFamily : {
+        sans : ['Poppins','san-serif'],
+      },
     },
   },
   plugins: [],

@@ -3,9 +3,9 @@ export function Approach(){
         <div className="flex flex-col min-h-screen ">
             <div className="flex justify-around">
                 <div className="text-2xl pt-[100px] pl-[40px]">Our Approach
-                <div className="text-6xl pt-[40px]">Go on your last first <br />date.</div>
+                <div className="text-5xl pt-[40px]">Go on your last first <br />date.</div>
                 </div>
-                <div className="text-2xl w-[400px] mt-[420px]">Hinge is built on the belief that anyone looking for love should be able to find it. It's also built on an acclaimed Nobel-Prize-winning algorithm, so we can succeed in getting you out on promising dates, not keeping you on the app.
+                <div className="text-xl w-[400px] mt-[420px]">Hinge is built on the belief that anyone looking for love should be able to find it. It's also built on an acclaimed Nobel-Prize-winning algorithm, so we can succeed in getting you out on promising dates, not keeping you on the app.
                 How we do it <br />
                 <button className="ml-[100px] mt-[50px] text-white-700 rounded bg-black text-white rounded-full min-w-[150px] min-h-[40px]">Here we go.</button>
                 </div>
@@ -19,8 +19,8 @@ export function Approach(){
             <div className="mt-[150px]">
                 <div className="flex flex-col">
                 <div className="text-2xl mb-[30px]">Hinge Labs</div>
-                <div className="text-6xl mb-[50px]">We're love scientists.</div>
-                <div className="text-2xl w-[300px]">Our Hinge Labs researchers, behavioral analysts, and matchmakers study daters and compatibility so we can make Hinge better for you. We've gotten pretty good at it.
+                <div className="text-5xl mb-[50px]">We're love scientists.</div>
+                <div className="text-xl w-[300px]">Our Hinge Labs researchers, behavioral analysts, and matchmakers study daters and compatibility so we can make Hinge better for you. We've gotten pretty good at it.
             </div>
             </div>
         </div>
