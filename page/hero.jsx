@@ -1,19 +1,16 @@
 import { Navbar } from "./navbar";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { Loader } from "lucide-react";
 import SignUp from "./signup";  // Import your SignUp component
 
 export function Hero() {
   const [loading, setLoading] = useState(false); // State for loader
   const [showForm, setShowForm] = useState(false); // State to toggle form visibility
-
+  const navigate = useNavigate();
   // Function to handle button click
   function clickhandler() {
-    setLoading(true); // Start loading
-    setTimeout(() => {
-      setLoading(false); // Stop loading after 1 second
-      setShowForm(true); // Show the form
-    }, 1000); // Delay of 1 second before showing the form
+    navigate("user/signup")
   }
 
   return (
@@ -43,7 +40,6 @@ export function Hero() {
           </div>
         </div>
       )}
-      {showForm && <SignUp />}
     </div>
   );
 }

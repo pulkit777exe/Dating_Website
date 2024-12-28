@@ -1,23 +1,22 @@
 export function Work() {
     return (
-      <div className="max-w-6xl mx-auto mt-[200px] mb-[200px]">
+      <div className="mt-[200px] mb-[200px]">
         <div className="py-16 md:py-24 flex justify-between items-center">
-          {/* Text Section */}
-          <div className="text-center md:text-left w-full md:w-1/2">
-            <h2 className="text-2xl font-semibold mt-8 md:mt-0">Work at Hinge.</h2>
-            <h1 className="text-5xl md:text-6xl mt-6 mb-4 w-[280px] md:w-[400px] mx-auto md:mx-0">
+
+          <div className="text-center ml-[] md:text-left w-full md:w-1/2">
+            <h2 className="text-2xl font-semibold mt-8 mb-16 md:mt-0">Work at Hinge.</h2>
+            <h1 className="text-5xl md:text-6xl mt-6 mb-16 w-[280px] md:w-[400px] mx-auto md:mx-0">
               Let’s work together
             </h1>
-            <p className="text-xl text-gray-400 mt-6 mx-auto md:mx-0 md:w-[350px]">
+            <p className="text-xl text-gray-400 mt-6 mb-8 mx-auto md:mx-0 md:w-[350px]">
               We’re looking for people who want to make dating effective, not addictive.
             </p>
-            <button className="text-xl text-white bg-black rounded-2xl w-[180px] mt-8 mx-auto md:mx-0 hover:bg-gray-800 transition-colors">
+            <button className="text-xl text-white bg-black rounded-2xl w-[180px] mt-8 mx-auto md:mx-0 hover:bg-gray-800 transition-colors p-1">
               Join us
             </button>
           </div>
   
-          {/* Image Section */}
-          <div className="flex gap-8 justify-center md:w-1/2 mt-8 md:mt-0">
+          <div className="flex gap-4 justify-center md:w-1/2 mt-8 md:mt-0">
             <img
               src="https://images.hinge.co/37d75e9dc4f19f56c56515e953dd0797dec14dff-838x1200.jpg?w=384&q=75"
               alt="Hinge Office"
