@@ -19,7 +19,7 @@ export function Approach(){
             <div className="mt-[150px]">
                 <div className="flex flex-col">
                 <div className="font-semibold text-2xl mb-[30px]">Hinge Labs</div>
-                <div className="text-5xl mb-[50px]">We're love scientists.</div>
+                <div className="text-5xl mb-[50px] font-semibold">We're love scientists.</div>
                 <div className="text-xl text-gray-400 w-[300px]">Our Hinge Labs researchers, behavioral analysts, and matchmakers study daters and compatibility so we can make Hinge better for you. We've gotten pretty good at it.
             </div>
             </div>
