@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const Schema  = mongoose.Schema;
 
+mongoose.connect("");
 
 const userSchema = new Schema({
     username : String,
