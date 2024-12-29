@@ -3,31 +3,34 @@ import { useNavigate } from "react-router";
 
 export function Hero() {
   const navigate = useNavigate();
+  
   function clickhandler() {
     navigate("user/signup")
   }
 
   return (
-    <div>
+    <div className="relative">
       <Navbar />
-        <div className="text-6xl font-bold flex-grow">
-          <img
-            src="https://images.hinge.co/489574db9ccfa50bf87e440f8a3be065d958a97f-2304x1536.jpg?w=1920&q=75"
-            alt=""
-            className="flex justify-center items-center w-full h-full"
-          />
-          <div className="flex text-white absolute top-[400px] left-[100px]">
+      <div className="relative w-full h-full">
+        <img
+          src="https://images.hinge.co/489574db9ccfa50bf87e440f8a3be065d958a97f-2304x1536.jpg?w=1920&q=75"
+          alt="Hero Image"
+          className="w-full h-auto object-cover"
+        />
+        <div className="absolute top-[25%] left-[10%] md:left-[15%] text-white px-4 md:px-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
             The dating app <br />
             designed to be deleted
-            <div className="text-xl relative top-[55px]">TM</div>
-            <button
-              onClick={clickhandler} 
-              className="absolute top-40 text-lg rounded-full bg-black text-white w-[100px] h-[40px] hover:bg-white hover:text-black duration-500"
-            >
-              Sign In
-            </button>
-          </div>
+            <h1 className="text-lg sm:text-xl relative top-4">TM</h1>
+          </h1>
+          <button
+            onClick={clickhandler}
+            className="mt-6 text-lg rounded-full bg-black text-white w-[120px] h-[40px] mt-[200px] sm:items-center sm:w-[150px] sm:h-[50px] hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Sign In
+          </button>
         </div>
+      </div>
     </div>
   );
 }
