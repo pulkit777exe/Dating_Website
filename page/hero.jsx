@@ -22,13 +22,13 @@ export function Hero() {
             The dating app <br />
             designed to be deleted
             <h1 className="text-lg sm:text-xl relative top-4">TM</h1>
-          </h1>
-          <button
+          </h1>    
+        <button
             onClick={clickhandler}
-            className="mt-6 text-lg rounded-full bg-black text-white w-[120px] h-[40px] mt-[200px] sm:items-center sm:w-[150px] sm:h-[50px] hover:bg-white hover:text-black transition-all duration-300"
+            className="mt-6 text-lg rounded-full bg-black text-white w-[120px] h-[40px] sm:items-center sm:w-[150px] sm:h-[50px] hover:bg-white hover:text-black transition-all duration-300"
           >
             Sign In
-          </button>
+        </button>
         </div>
       </div>
     </div>
