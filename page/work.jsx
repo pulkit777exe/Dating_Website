@@ -3,7 +3,7 @@ export function Work() {
     <div className="max-w-full">
       <div className="mt-[100px] mb-[100px] py-16 md:py-24 flex flex-col md:flex-row justify-between items-center">
         
-        <div className="text-center md:ml-[250px] md:text-left w-full md:w-1/2">
+        <div className="text-center lg:ml-[300px] md:ml-[30px] md:text-left w-full transition-all smooth duration-500 md:w-1/2">
           <h2 className="text-2xl font-bold mt-8 mb-16 md:mt-0">Work at Hinge.</h2>
           <h1 className="text-3xl md:text-5xl mt-6 mb-16 w-[80%] md:w-[400px] mx-auto md:mx-0 font-semibold">
             Let’s work together
@@ -11,12 +11,12 @@ export function Work() {
           <p className="text-xl text-gray-400 mt-6 mb-8 mx-auto md:mx-0 md:w-[350px]">
             We’re looking for people who want to make dating effective, not addictive.
           </p>
-          <button className="text-xl text-white bg-black rounded-full w-[180px] mt-8 mx-auto md:mx-0 hover:bg-gray-800 transition-colors p-1">
+          <button className="text-xl text-white bg-black rounded-full w-[180px] mt-8 mx-auto md:mx-0  transition-all hover:bg-white hover:border-black hover:shadow-xl hover:text-black duration-300 p-2">
             Join us
           </button>
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-center md:w-1/2 mt-8 md:mt-0">
+        <div className="flex flex-wrap gap-4 transition-all ease duration-500 justify-center md:w-1/2 mt-8 md:mt-0">
           <img
             src="https://images.hinge.co/37d75e9dc4f19f56c56515e953dd0797dec14dff-838x1200.jpg?w=384&q=75"
             alt="Hinge Office"

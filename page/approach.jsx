@@ -13,7 +13,7 @@ export function Approach() {
               Hinge is built on the belief that anyone looking for love should be able to find it. It's also built on an acclaimed Nobel-Prize-winning algorithm, so we can succeed in getting you out on promising dates, not keeping you on the app.
               How we do it
               <br />
-              <button className="mt-4 sm:mt-[50px] px-6 py-2 text-white rounded-full bg-black text-white hover:bg-gray-800 min-w-[150px]">
+              <button className="mt-4 sm:mt-[50px] hover:shadow-xl text-white px-6 py-2 min-w-[150px] bg-black rounded-full hover:bg-white hover:text-black transition-all duration-300">
                 Here we go.
               </button>
             </div>

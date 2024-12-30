@@ -25,7 +25,7 @@ export function Hero() {
           </h1>    
         <button
             onClick={clickhandler}
-            className="mt-6 text-lg rounded-full bg-black text-white w-[120px] h-[40px] sm:items-center sm:w-[150px] sm:h-[50px] hover:bg-white hover:text-black transition-all duration-300"
+            className="mt-6 text-lg rounded-full hover:shadow-2xl bg-black text-white w-[120px] h-[40px] sm:items-center sm:w-[150px] sm:h-[50px] hover:bg-white hover:text-black transition-all duration-300"
           >
             Sign In
         </button>
