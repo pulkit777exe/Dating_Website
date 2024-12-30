@@ -34,23 +34,26 @@ export function Navbar({blackText}) {
       </div>
 
       <div className="md:hidden flex items-center">
-        <button onClick={toggleMenu} className="text-white text-3xl transition-all ease duration-300 ease">
+        <button onClick={toggleMenu} className="text-grey-500 text-3xl transition-all ease duration-300 ease">
           {menuOpen ? '×' : '☰'}
         </button>
       </div>
 
-      <div
-        className={`md:hidden absolute top-[70px] left-0 right-0 transition-all duration-300 ease ${
-          menuOpen ? 'bg-[#1e1e1e] backdrop-blur-md opacity-100 translate-y-0' : 'bg-transparent opacity-0 translate-y-[-20px]'
-        } text-white backdrop-blur-md rounded-lg shadow-lg`}
-      >
-        <ul className="flex flex-col items-center gap-y-4 py-4">
-          <li className="text-lg font-semibold hover:text-black cursor-pointer transition-all ease duration-300">Mission</li>
-          <li className="text-lg font-semibold hover:text-black cursor-pointer transition-all ease duration-300">Careers</li>
-          <li className="text-lg font-semibold hover:text-black cursor-pointer transition-all ease duration-300">Labs</li>
-          <li className="text-lg font-semibold hover:text-black cursor-pointer transition-all ease duration-300">Impact</li>
-        </ul>
-      </div>
+        <div
+    className={`md:hidden absolute top-[70px] left-0 right-0 transition-all duration-300 ease-in-out ${
+      menuOpen
+        ? 'bg-[#bcab99] bg-opacity-90 min-h-screen' 
+        : 'bg-transparent opacity-0 translate-y-[-20px]'
+    } text-black rounded-lg shadow-lg`}
+  >
+    <ul className="flex flex-col items-center gap-y-4 py-4">
+      <li className="text-lg font-semibold hover:text-white cursor-pointer transition-all ease duration-300">Mission</li>
+      <li className="text-lg font-semibold hover:text-white cursor-pointer transition-all ease duration-300">Careers</li>
+      <li className="text-lg font-semibold hover:text-white cursor-pointer transition-all ease duration-300">Labs</li>
+      <li className="text-lg font-semibold hover:text-white cursor-pointer transition-all ease duration-300">Impact</li>
+    </ul>
+  </div>
+
     </div>
   );
 }

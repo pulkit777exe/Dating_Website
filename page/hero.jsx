@@ -5,7 +5,7 @@ export function Hero() {
   const navigate = useNavigate();
   
   function clickhandler() {
-    navigate("user/signup")
+    navigate("/signup")
   }
 
   return (
