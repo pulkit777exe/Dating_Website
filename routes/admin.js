@@ -1,55 +1,59 @@
-import Admin from "../db/index"
-import adminMiddleware from "../middleware/admin"
+import { Router } from "express";
+import Admin from "../db/index";
+import adminMiddleware from "../middleware/admin";
+import { z } from "zod";
 
-const { Router } = require("express")
 const router = Router();
+router.use(adminMiddleware)
 
-router.post("/signup",adminMiddleware,function(req,res){
-    const username= req.headers.username;
-    const password = req.headers.password;
+const signupSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters long"),
+  password: z.string().min(6, "Password must be at least 6 characters long"),
+});
 
-    try{
-         const user = Admin.create({
-            username : username,
-            password : password
-        })
-    } catch(e){
-        console.error(e);
-    } finally {
-        console.log("Login Successful")
-    }
-     
-    if(user){
-        res.json({
-            msg : "User was created succesfully"
-        })
+const signinSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters long"),
+  password: z.string().min(6, "Password must be at least 6 characters long"),
+});
+
+router.post("/signup", async (req, res) => {
+  const { username, password } = req.headers;
+
+  try {
+    signupSchema.parse({ username, password });
+    const user = await Admin.create({ username, password });
+
+    res.json({
+      msg: "User was created successfully",
+      user: user
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(400).json({ msg: e.errors ? e.errors[0].message : "Error creating user" });
+  }
+});
+
+router.post("/signin", async (req, res) => {
+  const { username, password } = req.headers;
+
+  try {
+    signinSchema.parse({ username, password });
+    const user = await Admin.findOne({ username, password });
+
+    if (user) {
+      res.json({
+        msg: "User was logged in successfully",
+        user: user
+      });
     } else {
-        res.json({
-            msg : "Unable to login"
-        })
+      res.status(404).json({
+        msg: "Error logging in. Invalid credentials."
+      });
     }
-})
-router.post("/signin",adminMiddleware,function(req,res){
-    const username= req.headers.username;
-    const password = req.headers.password;
+  } catch (e) {
+    console.error(e);
+    res.status(400).json({ msg: e.errors ? e.errors[0].message : "Error logging in" });
+  }
+});
 
-    try{
-         const user = Admin.findOne({
-            username : username,
-            password : password
-        })
-    } catch(e){
-        console.error(e);
-    } finally {
-        console.log("Login Successful")
-    }
-    if(user){
-        res.json({
-            msg : "User was logged in succesfully"
-        })
-    } else {
-        res.json({
-            msg : "Error logging in "
-        })
-    }
-})
+export default router;

@@ -1,15 +1,29 @@
-import userMiddleware from "../middleware/user"
-const express = require("express");
-const User = require("../db/index"); 
-const router = express.Router();
+import { Router } from "express";
+import User from "../db/index"; 
+import userMiddleware from "../middleware/user";
+import { z } from "zod";
 
-router.post("/user/signup",userMiddleware, async (req, res) => {
-  const { username, password } = req.body; 
+const router = Router();
+router.use(userMiddleware);
+
+const signupSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters long"),
+  password: z.string().min(6, "Password must be at least 6 characters long"),
+});
+
+const signinSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters long"),
+  password: z.string().min(6, "Password must be at least 6 characters long"),
+});
+
+router.post("/user/signup", async (req, res) => {
+  const { username, password } = req.body;
 
   try {
+    signupSchema.parse({ username, password });
     const user = await User.create({
-      username: username,
-      password: password, 
+      username,
+      password,
     });
     res.json({
       msg: "User was created successfully",
@@ -17,18 +31,19 @@ router.post("/user/signup",userMiddleware, async (req, res) => {
     console.log("User created successfully");
   } catch (e) {
     console.error(e);
-    res.json({
-      msg: "Unable to create user",
+    res.status(400).json({
+      msg: e.errors ? e.errors[0].message : "Unable to create user",
     });
   }
 });
 
-router.post("/user/signin", userMiddleware ,async (req, res) => {
+router.post("/user/signin", async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    signinSchema.parse({ username, password });
     const user = await User.findOne({
-      where: { username: username, password: password },
+      where: { username, password },
     });
 
     if (user) {
@@ -37,16 +52,16 @@ router.post("/user/signin", userMiddleware ,async (req, res) => {
       });
       console.log("Login successful");
     } else {
-      res.json({
+      res.status(404).json({
         msg: "Invalid credentials",
       });
     }
   } catch (e) {
     console.error(e);
-    res.json({
-      msg: "Error logging in",
+    res.status(400).json({
+      msg: e.errors ? e.errors[0].message : "Error logging in",
     });
   }
 });
 
-module.exports = router;
+export default router;
